@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URL)
 .catch((err)=>{console.log(err);
 });
 
-app.use("/", () => console.log('Okela'));
+
 app.use("/api/users",userRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/product", productRoute)
