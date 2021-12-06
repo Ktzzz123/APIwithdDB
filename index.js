@@ -26,6 +26,6 @@ app.use("/api/cart",cartRoute)
 
 
 
-app.listen(process.env.PORT || 5001, ()=>{
+app.listen(process.env.PORT || 5001||'https://api-webjelly.herokuapp.com/', ()=>{
     console.log("server running!!")
 }) 
