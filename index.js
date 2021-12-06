@@ -12,12 +12,21 @@ const cartRoute = require("./routes/cart")
 
 dotenv.config();
 
+// _______________________ MIDDLEWARE _______________________ //
+app.use(cors());
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
+
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log(("DBConnection successful")))
 .catch((err)=>{console.log(err);
 });
 
-app.use(express.json());
+app.use("/", () => console.log('Okela'));
 app.use("/api/users",userRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/product", productRoute)
